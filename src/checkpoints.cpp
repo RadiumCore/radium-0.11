@@ -27,12 +27,24 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        ( 5001,   uint256("0x2fac9021be0c311e7b6dc0933a72047c70f817e2eb1e01bede011193ad1b28bc") ) // hardfork
-        ( 10000,  uint256("0x0000000000827e4dc601f7310a91c45af8df0dfc1b6fa1dfa5b896cb00c8767c") ) // last pow block
-        ( 38425,  uint256("0x62bf2e9701226d2f88d9fa99d650bd81f3faf2e56f305b7d71ccd1e7aa9c3075") ) // hardfork
-        ( 254348, uint256("0x9bf8d9bd757d3ef23d5906d70567e5f0da93f1e0376588c8d421a95e2421838b") ) // minor network split
-        ( 319002, uint256("0x0011494d03b2cdf1ecfc8b0818f1e0ef7ee1d9e9b3d1279c10d35456bc3899ef") ) // hardfork
-        ( 872456, uint256("0xe4fd321ced1de06213d2e246b150b4bfd8c4aa0989965dce88f2a58668c64860") ) // hardfork
+        ( 0,   uint256("0x000000770c6aea829bb1ace7b06497f71799a6358e0e292740c4f9443a17bfb6") ) //genesis
+        ( 2879,   uint256("0x675ebb9f0f934c35bbf1955565482601ef68977b2fef8248689626004fcbce2d") ) //last pow
+        ( 2880,   uint256("0x3818386bc9fced59f21d5a9d1eab8a532c85efecb831eceee995ae1a7dc90419") ) //first pos
+        ( 100000,   uint256("0x97b8764441d1d0eff98e834cc743ec4cd6779d53f149dec9403c9758370abd8c") )
+        ( 200000,   uint256("0x98b0bcf0218293549a30d938a1d641b6bc6b498361cb432e3fafd6935c592846") )
+        ( 300000,   uint256("0xdcb25c38e2731a68d5bfa16b00b8479fed57c6a352cfd94d8e0dfdd690ac9ea2") )
+        ( 440000,   uint256("0x88914855018cf647d1b20162eed2dbc7cdf69757f8216868c1b55687aafe1a75") )
+        ( 500000,   uint256("0x41950e8d38381ce56fc0fd9eca76e73b49ce256c01ab2521897c5c6285b39c8d") )
+        ( 550000,   uint256("0x8a39262d43135792a429a4e2a6deeb669c88b618ecfa3ca855edaf1e4c3631af") )
+        ( 600000,   uint256("0x23141467be3b6fe23419c8a9fbcd4df431b4b1abcd43a1fa689e7b6d137e89ef") )
+        ( 619480,   uint256("0x17895abf56169141d553891d00a4c46d37023250a0089800e389bfba37e91f9a") ) // avg_fee start block
+        ( 625249,   uint256("0x677def44b35e162452fb12f00c4e4fa5f1339a90a4b82753266e1cd9f5b359e7") ) // problem block on avg_fee
+        ( 626372,   uint256("0x977494d951029df80bee05bdd461e6e767c916c2b60ebd356133c38ae5cf5823") ) // pre avg_fee revert block
+        ( 626555,   uint256("0xab4e8bdd76283070e11377f9497d7a644d9a813fc354152b36ded76d68eb5388") ) // post avg_fee revert block
+        ( 655200,   uint256("0x0dbcd2799042832cb3c1c0255e34b1ca797d30db9438d836e9e830394e98b999 ") ) // Radium 1.4.5 Code release
+        ( 700000,   uint256("0x6ceebeff2760988638367e5e91a9061bdc9623db1dceeaa7cef1eb8da88ec2bd ") )
+        ( 800000,   uint256("0xbce932a50e264133d5456f1a8076552f5186f3f6ff46310f4c769ae83c4a1723 ") )
+        ( 900000,   uint256("0x5c58c0b472ab44dbde75c31e549615fc00feea3a93844d8c78837b2e85245c4e ") )
     ;
 
     // TestNet has no checkpoints
