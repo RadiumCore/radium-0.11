@@ -1143,6 +1143,7 @@ void DumpAddresses()
     LogPrint("net", "Flushed %d addresses to peers.dat  %dms\n",
            addrman.size(), GetTimeMillis() - nStart);
 }
+// "seed peer" is a peer that provides more connections, but is NOT designed as a sync node
 
 void static ProcessOneShot()
 {
@@ -1153,12 +1154,14 @@ void static ProcessOneShot()
             return;
         strDest = vOneShots.front();
         vOneShots.pop_front();
+        LogPrintf("Attempting to connect to seed peer %s \n", strDest);
     }
     CAddress addr;
     CSemaphoreGrant grant(*semOutbound, true);
     if (grant) {
         if (!OpenNetworkConnection(addr, &grant, strDest.c_str(), true))
             AddOneShot(strDest);
+            LogPrintf("Unable to connect to seed peer %s \n", strDest);
     }
 }
 
