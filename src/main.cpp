@@ -2208,7 +2208,14 @@ bool CBlock::AcceptBlock()
         return DoS(100, error("AcceptBlock() : reject proof-of-work at height %d", nHeight));
 
     // Check coinbase timestamp
-    if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
+
+    // ORIGINAL code commented below. Due to error in up to 1.4.6, coinbase timestamp check didnt run for 
+    // initial round of PoW blocks. Due to this, new code below to skip check during PoW period. 
+    // if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
+    //    return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+
+  
+    if (nHeight > 20160 &&GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
         return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
 
     // Check coinstake timestamp
