@@ -1202,6 +1202,10 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
     int64_t nInterval = nTargetTimespan / nTargetSpacing;
+
+    if(pindexBest->nHeight >= 48)
+            nInterval = nTargetTimespanNEW / nTargetSpacing;
+
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
 
