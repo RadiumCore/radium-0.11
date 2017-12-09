@@ -1,5 +1,5 @@
-blackcoin-qt usr/bin
+radium-qt usr/bin
 share/pixmaps/bitcoin32.xpm usr/share/pixmaps
 share/pixmaps/bitcoin80.xpm usr/share/pixmaps
-debian/blackcoin-qt.desktop usr/share/applications
-debian/blackcoin-qt.protocol usr/share/kde4/services/
+debian/radium-qt.desktop usr/share/applications
+debian/radium-qt.protocol usr/share/kde4/services/

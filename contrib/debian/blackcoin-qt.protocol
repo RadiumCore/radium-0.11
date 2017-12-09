@@ -1,6 +1,6 @@
 [Protocol]
-exec=blackcoin-qt '%u'
-protocol=blackcoin
+exec=radium-qt '%u'
+protocol=radium
 input=none
 output=none
 helper=true

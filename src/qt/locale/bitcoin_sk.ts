@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About BlackCoin</source>
-        <translation>O BlackCoin</translation>
+        <source>About radium</source>
+        <translation>O radium</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;BlackCoin&lt;/b&gt; version</source>
-        <translation>Verzia &lt;b&gt;BlackCoin&lt;/b&gt;</translation>
+        <source>&lt;b&gt;radium&lt;/b&gt; version</source>
+        <translation>Verzia &lt;b&gt;radium&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The BlackCoin developers</source>
+Copyright © 2014 The radium developers</source>
         <translation>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The BlackCoin developers</translation>
+Copyright © 2014 The radium developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -65,8 +65,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your BlackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Toto sú vaše BlackCoin adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, aby ste mohli sledovať, kto Vám platí.</translation>
+        <source>These are your radium addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Toto sú vaše radium adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, aby ste mohli sledovať, kto Vám platí.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -80,8 +80,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a BlackCoin address</source>
-        <translation>Podpísať správu ako dôkaz, že vlastníte túto BlackCoin adresu</translation>
+        <source>Sign a message to prove you own a radium address</source>
+        <translation>Podpísať správu ako dôkaz, že vlastníte túto radium adresu</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified BlackCoin address</source>
-        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou BlackCoin adresou</translation>
+        <source>Verify a message to ensure it was signed with a specified radium address</source>
+        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou radium adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -263,8 +263,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+82"/>
-        <source>BlackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>BlackCoin sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom, ktorý napadol váš počítač.</translation>
+        <source>radium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>radium sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom, ktorý napadol váš počítač.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -357,8 +357,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about BlackCoin</source>
-        <translation>Zobraziť informácie o BlackCoin</translation>
+        <source>Show information about radium</source>
+        <translation>Zobraziť informácie o radium</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -397,13 +397,13 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a BlackCoin address</source>
-        <translation>Poslať mince na BlackCoin adresu</translation>
+        <source>Send coins to a radium address</source>
+        <translation>Poslať mince na radium adresu</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for BlackCoin</source>
-        <translation>Upraviť možnosti konfigurácie pre BlackCoin</translation>
+        <source>Modify configuration options for radium</source>
+        <translation>Upraviť možnosti konfigurácie pre radium</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -443,8 +443,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>BlackCoin</source>
-        <translation>BlackCoin</translation>
+        <source>radium</source>
+        <translation>radium</translation>
     </message>
     <message>
         <location line="-555"/>
@@ -453,8 +453,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About BlackCoin</source>
-        <translation>&amp;O BlackCoin</translation>
+        <source>&amp;About radium</source>
+        <translation>&amp;O radium</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -505,13 +505,13 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>BlackCoin client</source>
-        <translation>BlackCoin klient</translation>
+        <source>radium client</source>
+        <translation>radium klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to BlackCoin network</source>
-        <translation><numerusform>%n aktívne spojenie s BlackCoin sieťov</numerusform><numerusform>%n aktívnych spojení s BlackCoin sieťov</numerusform><numerusform>%n aktívnych spojení s BlackCoin sieťou</numerusform></translation>
+        <source>%n active connection(s) to radium network</source>
+        <translation><numerusform>%n aktívne spojenie s radium sieťov</numerusform><numerusform>%n aktívnych spojení s radium sieťov</numerusform><numerusform>%n aktívnych spojení s radium sieťou</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -604,8 +604,8 @@ Adresa: %4</translation>
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid BlackCoin address or malformed URI parameters.</source>
-        <translation>URI nemožno analyzovať! Toto môže byť spôsobené neplatnou BlackCoin adresu alebo chybnými URI parametrami.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid radium address or malformed URI parameters.</source>
+        <translation>URI nemožno analyzovať! Toto môže byť spôsobené neplatnou radium adresu alebo chybnými URI parametrami.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -727,8 +727,8 @@ Adresa: %4</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. BlackCoin can no longer continue safely and will quit.</source>
-        <translation>Došlo k závažnej chybe. BlackCoin už nemôže pokračovať bezpečne a bude ukončený.</translation>
+        <source>A fatal error occurred. radium can no longer continue safely and will quit.</source>
+        <translation>Došlo k závažnej chybe. radium už nemôže pokračovať bezpečne a bude ukončený.</translation>
     </message>
 </context>
 <context>
@@ -1003,8 +1003,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid BlackCoin address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; nie je platnou BlackCoin adresou.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid radium address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; nie je platnou radium adresou.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1022,8 +1022,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>BlackCoin-Qt</source>
-        <translation>BlackCoin-Qt</translation>
+        <source>radium-Qt</source>
+        <translation>radium-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1095,13 +1095,13 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start BlackCoin after logging in to the system.</source>
-        <translation>Automaticky spustiť BlackCoin po prihlásení sa do systému.</translation>
+        <source>Automatically start radium after logging in to the system.</source>
+        <translation>Automaticky spustiť radium po prihlásení sa do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start BlackCoin on system login</source>
-        <translation>&amp;Spustiť BlackCoin pri prihlásení do systému</translation>
+        <source>&amp;Start radium on system login</source>
+        <translation>&amp;Spustiť radium pri prihlásení do systému</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1110,8 +1110,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the BlackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otvoriť port klienta BlackCoin na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
+        <source>Automatically open the radium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otvoriť port klienta radium na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1140,8 +1140,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the BlackCoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
-        <translation>Pripojiť k sieti BlackCoin cez SOCKS5 proxy (napr. pri pripojení cez Tor).</translation>
+        <source>Connect to the radium network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <translation>Pripojiť k sieti radium cez SOCKS5 proxy (napr. pri pripojení cez Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1185,8 +1185,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting BlackCoin.</source>
-        <translation>Tu môžete nastaviť jazyk používateľského rozhrania. Toto nastavenie sa prejaví až po reštartovaní BlackCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting radium.</source>
+        <translation>Tu môžete nastaviť jazyk používateľského rozhrania. Toto nastavenie sa prejaví až po reštartovaní radium.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1242,8 +1242,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting BlackCoin.</source>
-        <translation>Toto nastavenie sa prejaví až po reštartovaní BlackCoin.</translation>
+        <source>This setting will take effect after restarting radium.</source>
+        <translation>Toto nastavenie sa prejaví až po reštartovaní radium.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1261,8 +1261,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BlackCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou BlackCoin po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the radium network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou radium po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1335,8 +1335,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start blackcoin: click-to-pay handler</source>
-        <translation>BlackCoin sa nedá spustiť: click-to-pay handler</translation>
+        <source>Cannot start radium: click-to-pay handler</source>
+        <translation>radium sa nedá spustiť: click-to-pay handler</translation>
     </message>
 </context>
 <context>
@@ -1505,8 +1505,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the BlackCoin-Qt help message to get a list with possible BlackCoin command-line options.</source>
-        <translation>Zobraziť BlackCoin-Qt nápovedu k získaniu zoznamu pre možnosti  príkazového riadku BlackCoin.</translation>
+        <source>Show the radium-Qt help message to get a list with possible radium command-line options.</source>
+        <translation>Zobraziť radium-Qt nápovedu k získaniu zoznamu pre možnosti  príkazového riadku radium.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1525,13 +1525,13 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>BlackCoin - Debug window</source>
-        <translation>BlackCoin - Ladiace okno</translation>
+        <source>radium - Debug window</source>
+        <translation>radium - Ladiace okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>BlackCoin Core</source>
-        <translation>Jadro BlackCoin</translation>
+        <source>radium Core</source>
+        <translation>Jadro radium</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1540,8 +1540,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the BlackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorte Blackcoin súbor denníku ladenia z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory denníka.</translation>
+        <source>Open the radium debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorte Radium súbor denníku ladenia z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory denníka.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1550,8 +1550,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the BlackCoin RPC console.</source>
-        <translation>Vitajte v konzole Blackcoin RPC.</translation>
+        <source>Welcome to the radium RPC console.</source>
+        <translation>Vitajte v konzole Radium RPC.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1721,8 +1721,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte BlackCoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte radium adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1816,8 +1816,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid BlackCoin address</source>
-        <translation>UPOZORNENIE: Neplatná BlackCoin adresa</translation>
+        <source>WARNING: Invalid radium address</source>
+        <translation>UPOZORNENIE: Neplatná radium adresa</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1890,8 +1890,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte BlackCoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte radium adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1951,8 +1951,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this BlackCoin address</source>
-        <translation>Podpísať správu ako dôkaz, že vlastníte túto BlackCoin adresu</translation>
+        <source>Sign the message to prove you own this radium address</source>
+        <translation>Podpísať správu ako dôkaz, že vlastníte túto radium adresu</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1983,8 +1983,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified BlackCoin address</source>
-        <translation>Overte správu, aby ste sa ubezpečili, že bola podpísaná s danou BlackCoin adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified radium address</source>
+        <translation>Overte správu, aby ste sa ubezpečili, že bola podpísaná s danou radium adresou</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1994,8 +1994,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte BlackCoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte radium adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2004,8 +2004,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter BlackCoin signature</source>
-        <translation>Zadajte BlackCoin podpis</translation>
+        <source>Enter radium signature</source>
+        <translation>Zadajte radium podpis</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2583,8 +2583,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>BlackCoin version</source>
-        <translation>Verzia BlackCoin</translation>
+        <source>radium version</source>
+        <translation>Verzia radium</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2593,8 +2593,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or blackcoind</source>
-        <translation>Pošli príkaz na -server alebo blackcoind</translation>
+        <source>Send command to -server or radiumd</source>
+        <translation>Pošli príkaz na -server alebo radiumd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2613,13 +2613,13 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: blackcoin.conf)</source>
-        <translation>Zadajte konfiguračný súbor (predvolené: blackcoin.conf)</translation>
+        <source>Specify configuration file (default: radium.conf)</source>
+        <translation>Zadajte konfiguračný súbor (predvolené: radium.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: blackcoind.pid)</source>
-        <translation>Zadajte pid súbor (predvolené: blackcoind.pid)</translation>
+        <source>Specify pid file (default: radiumd.pid)</source>
+        <translation>Zadajte pid súbor (predvolené: radiumd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2636,24 +2636,24 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=blackcoinrpc
+rpcuser=radiumrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;radium Alert&quot; admin@foo.com
 </source>
         <translation>%s, musíte nastaviť rpcpassword v konfiguračnom súbore:
 %s
 Doporučuje sa použiť nasledovné náhodne heslo:
-rpcuser=blackcoinrpc
+rpcuser=radiumrpc
 rpcpassword=%s
 (toto heslo si nemusíte pamätať)
 Užívateľské meno a heslo NESMIE byť rovnaké.
 Ak súbor neexistuje, vytvorte ho s právami &quot;môže čítať iba vlastník&quot;.
 Odporúča sa tiež nastaviť &quot;alertnotify&quot;, takže budete upozornení na problémy,
-napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; admin@foo.com
+napríklad: alertnotify=echo %%s | mail -s &quot;radium upozornenie&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2753,8 +2753,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; adm
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong BlackCoin will not work properly.</source>
-        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny BlackCoin nebude pracovať správne.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong radium will not work properly.</source>
+        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny radium nebude pracovať správne.</translation>
     </message>
     <message>
         <location line="-19"/>
@@ -3048,8 +3048,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; adm
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. BlackCoin is shutting down.</source>
-        <translation>Úvodné kontrolné testy zlyhali. BlackCoin sa teraz zatvori.</translation>
+        <source>Initialization sanity check failed. radium is shutting down.</source>
+        <translation>Úvodné kontrolné testy zlyhali. radium sa teraz zatvori.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3103,13 +3103,13 @@ napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; adm
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of BlackCoin</source>
-        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu BlackCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of radium</source>
+        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu radium</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart BlackCoin to complete</source>
-        <translation>Peňaženka potrebuje byť prepísaná: reštartujte BlackCoin k dokončeniu</translation>
+        <source>Wallet needed to be rewritten: restart radium to complete</source>
+        <translation>Peňaženka potrebuje byť prepísaná: reštartujte radium k dokončeniu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3168,8 +3168,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; adm
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. BlackCoin is probably already running.</source>
-        <translation>Nemôžem sa pripojiť na %s na tomto počítači. BlackCoin je pravdepodobne už beží.</translation>
+        <source>Unable to bind to %s on this computer. radium is probably already running.</source>
+        <translation>Nemôžem sa pripojiť na %s na tomto počítači. radium je pravdepodobne už beží.</translation>
     </message>
     <message>
         <location line="-108"/>
@@ -3198,8 +3198,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;BlackCoin upozornenie&quot; adm
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. BlackCoin is probably already running.</source>
-        <translation>Nedá sa zamknúť dátová zložka %s. BlackCoin je pravdepodobne už spustený</translation>
+        <source>Cannot obtain a lock on data directory %s. radium is probably already running.</source>
+        <translation>Nedá sa zamknúť dátová zložka %s. radium je pravdepodobne už spustený</translation>
     </message>
     <message>
         <location line="+4"/>

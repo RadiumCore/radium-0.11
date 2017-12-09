@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About BlackCoin</source>
+        <source>About radium</source>
         <translation>ブラックコインについて</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;BlackCoin&lt;/b&gt; version</source>
+        <source>&lt;b&gt;radium&lt;/b&gt; version</source>
         <translation>&lt;b&gt;ブラックコイン&lt;/b&gt;バージョン</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The BlackCoin developers</source>
+Copyright © 2014 The radium developers</source>
         <translation>コピーライト © 2009-2014 The Bitcoin developers
 コピーライト © 2012-2014 The NovaCoin developers
-コピーライト © 2014 The BlackCoin developers</translation>
+コピーライト © 2014 The radium developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -60,7 +60,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your BlackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your radium addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>これは支払いを受けるためのブラックコインのアドレス。支払い管理をするのため、各送信者へ、それぞれのアドレスを伝えたほうがいいです。</translation>
     </message>
     <message>
@@ -75,7 +75,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a BlackCoin address</source>
+        <source>Sign a message to prove you own a radium address</source>
         <translation>所有権の証明するためのメサッジを署名する。</translation>
     </message>
     <message>
@@ -90,7 +90,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified BlackCoin address</source>
+        <source>Verify a message to ensure it was signed with a specified radium address</source>
         <translation>受け取ったメッセージの署名を確保のため、メッセージを確認する。</translation>
     </message>
     <message>
@@ -258,7 +258,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>BlackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <source>radium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>ただいま、暗号化手順を完成するため、ブラックコインQTは閉じます。尚、ウォレットを暗号化をされたにしても、PCのウイルスから盗難防止の報償できないことを、ご理解をお願い足します。</translation>
     </message>
     <message>
@@ -352,7 +352,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about BlackCoin</source>
+        <source>Show information about radium</source>
         <translation>ブラックコインの情報を表示</translation>
     </message>
     <message>
@@ -392,12 +392,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a BlackCoin address</source>
+        <source>Send coins to a radium address</source>
         <translation>ブラックコインアドレスへコインを送る</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for BlackCoin</source>
+        <source>Modify configuration options for radium</source>
         <translation>ブラックコインの設定を変化する</translation>
     </message>
     <message>
@@ -438,7 +438,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>BlackCoin</source>
+        <source>radium</source>
         <translation>ブラックコイン</translation>
     </message>
     <message>
@@ -448,7 +448,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About BlackCoin</source>
+        <source>&amp;About radium</source>
         <translation>ブラックコインについて</translation>
     </message>
     <message>
@@ -500,12 +500,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>BlackCoin client</source>
+        <source>radium client</source>
         <translation>ブラックコインクライアントソフトウェア</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to BlackCoin network</source>
+        <source>%n active connection(s) to radium network</source>
         <translation><numerusform>ブラックコインネットワークへの%n アクティブな接続</numerusform></translation>
     </message>
     <message>
@@ -599,7 +599,7 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid BlackCoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid radium address or malformed URI parameters.</source>
         <translation>URIのパーズができませんでした！。原因は無効なブラックコインアドレスか不正なURIパラメータ。</translation>
     </message>
     <message>
@@ -722,7 +722,7 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. BlackCoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. radium can no longer continue safely and will quit.</source>
         <translation>致命的エラー。安全に続きができないため、バラックコインQTは閉じます。</translation>
     </message>
 </context>
@@ -998,7 +998,7 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid BlackCoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid radium address.</source>
         <translation>入力されたアドレス &quot;%1&quot; 、有効なブラックコインアドレスではない。</translation>
     </message>
     <message>
@@ -1017,7 +1017,7 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>BlackCoin-Qt</source>
+        <source>radium-Qt</source>
         <translation>ブラックコインQT</translation>
     </message>
     <message>
@@ -1090,12 +1090,12 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start BlackCoin after logging in to the system.</source>
+        <source>Automatically start radium after logging in to the system.</source>
         <translation>システムのログイン次第、自動的にブラックコインをスタート。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start BlackCoin on system login</source>
+        <source>&amp;Start radium on system login</source>
         <translation>システムログイン次第、ブラックコインをスタート</translation>
     </message>
     <message>
@@ -1105,7 +1105,7 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the BlackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the radium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自動的にルーターでブラックコインクライエントソフトウェアのポートを開く。ルーターはUPnPのサポートあり、UPnPを有効にするならできる。</translation>
     </message>
     <message>
@@ -1135,7 +1135,7 @@ Address: %4
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the BlackCoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the radium network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1180,7 +1180,7 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting BlackCoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting radium.</source>
         <translation>ユーザのインターフェースの言語の設定です。リスタートの後、有効します。</translation>
     </message>
     <message>
@@ -1237,7 +1237,7 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting BlackCoin.</source>
+        <source>This setting will take effect after restarting radium.</source>
         <translation>この設定はブラックコインをリスタートした後に有効する。</translation>
     </message>
     <message>
@@ -1256,7 +1256,7 @@ Address: %4
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BlackCoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the radium network after a connection is established, but this process has not completed yet.</source>
         <translation>表示されている情報は時間遅れている。接続したら、ウォレットは自動的にブラックコインネットワークと同期しますが過程は完了してません。</translation>
     </message>
     <message>
@@ -1330,7 +1330,7 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start blackcoin: click-to-pay handler</source>
+        <source>Cannot start radium: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1500,7 +1500,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the BlackCoin-Qt help message to get a list with possible BlackCoin command-line options.</source>
+        <source>Show the radium-Qt help message to get a list with possible radium command-line options.</source>
         <translation>ブラックコインQTのコマンドラインのヘルプ情報を表示する。</translation>
     </message>
     <message>
@@ -1520,12 +1520,12 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>BlackCoin - Debug window</source>
+        <source>radium - Debug window</source>
         <translation>ブラックコイン：デバッグウインドウ</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>BlackCoin Core</source>
+        <source>radium Core</source>
         <translation>ブラックコインコア</translation>
     </message>
     <message>
@@ -1535,7 +1535,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the BlackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the radium debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>現行のディレクトリからデバッグログファイルを開く。大きなファイルのばい、少し時間かかる。</translation>
     </message>
     <message>
@@ -1545,7 +1545,7 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the BlackCoin RPC console.</source>
+        <source>Welcome to the radium RPC console.</source>
         <translation>ブラックコインRPCコンソールへようこそ。</translation>
     </message>
     <message>
@@ -1716,7 +1716,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>ブラックコインアドレスの入力 (例；B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
@@ -1811,7 +1811,7 @@ Address: %4
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid BlackCoin address</source>
+        <source>WARNING: Invalid radium address</source>
         <translation>警告：無効なブラックコインアドレス</translation>
     </message>
     <message>
@@ -1885,7 +1885,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>ブラックコインアドレスの入力 (例；B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
@@ -1946,7 +1946,7 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this BlackCoin address</source>
+        <source>Sign the message to prove you own this radium address</source>
         <translation>所有権の証明するためこのメサッジを署名する</translation>
     </message>
     <message>
@@ -1978,7 +1978,7 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified BlackCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified radium address</source>
         <translation>受け取ったメッセージの署名を確保のため、メッセージを確認する。</translation>
     </message>
     <message>
@@ -1989,7 +1989,7 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a radium address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>ブラックコインのアドレスを入力(例：B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
@@ -1999,7 +1999,7 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter BlackCoin signature</source>
+        <source>Enter radium signature</source>
         <translation>ブラックコインのデジタル署名を入力</translation>
     </message>
     <message>
@@ -2578,7 +2578,7 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>BlackCoin version</source>
+        <source>radium version</source>
         <translation>ブラックコインバージョン</translation>
     </message>
     <message>
@@ -2588,8 +2588,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or blackcoind</source>
-        <translation>-server か blackcoindへコマンドを送る。</translation>
+        <source>Send command to -server or radiumd</source>
+        <translation>-server か radiumdへコマンドを送る。</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2608,13 +2608,13 @@ Address: %4
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: blackcoin.conf)</source>
-        <translation>設定ファイルを特定する (デファルト: blackcoin.conf)</translation>
+        <source>Specify configuration file (default: radium.conf)</source>
+        <translation>設定ファイルを特定する (デファルト: radium.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: blackcoind.pid)</source>
-        <translation>pid ファイルを特定する (デフォルト: blackcoind.pid)</translation>
+        <source>Specify pid file (default: radiumd.pid)</source>
+        <translation>pid ファイルを特定する (デフォルト: radiumd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2631,13 +2631,13 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=blackcoinrpc
+rpcuser=radiumrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;radium Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2738,7 +2738,7 @@ for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong BlackCoin will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong radium will not work properly.</source>
         <translation> 警告：コンピュータの日付と時間を調べてください。時間ずらしかったばい、ブラックコイン QTは正しく行動しない。</translation>
     </message>
     <message>
@@ -3033,7 +3033,7 @@ for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. BlackCoin is shutting down.</source>
+        <source>Initialization sanity check failed. radium is shutting down.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3088,12 +3088,12 @@ for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of BlackCoin</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of radium</source>
         <translation>wallet.dat 読み込みエラー: 　ブラックコインQTの最新バージョンが必要です</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart BlackCoin to complete</source>
+        <source>Wallet needed to be rewritten: restart radium to complete</source>
         <translation>ウォレットのデータをリライトしなければならい：ブラックコインQTをリスタートしてください</translation>
     </message>
     <message>
@@ -3153,7 +3153,7 @@ for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. BlackCoin is probably already running.</source>
+        <source>Unable to bind to %s on this computer. radium is probably already running.</source>
         <translation>このコンピューターで%sに結ぶことができなかった。ブラックコインQTは、もう発行してるでしょう。</translation>
     </message>
     <message>
@@ -3183,7 +3183,7 @@ for example: alertnotify=echo %%s | mail -s &quot;BlackCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. BlackCoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. radium is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

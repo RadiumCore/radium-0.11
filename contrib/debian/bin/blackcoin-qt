@@ -4,13 +4,13 @@ set -e
 
 umask 077
 
-basedir=~/.blackcoin
+basedir=~/.radium
 dbfile="$basedir/DB_CONFIG"
-cfgfile="$basedir/blackcoin.conf"
+cfgfile="$basedir/radium.conf"
 
 [ -e "$basedir" ] || mkdir "$basedir"
 
-# Blackcoin does not clean up DB log files by default
+# Radium does not clean up DB log files by default
 [ -e "$dbfile" ] || echo 'set_flags DB_LOG_AUTOREMOVE' > "$dbfile"
 
-exec /usr/lib/blackcoin/blackcoin-qt "$@"
+exec /usr/lib/radium/radium-qt "$@"

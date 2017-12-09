@@ -5,29 +5,29 @@
 #build/bitcoind::
 #	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_bitcoin)
 
-DEB_INSTALL_EXAMPLES_blackcoind += debian/examples/*
-DEB_INSTALL_MANPAGES_blackcoind += debian/manpages/*
+DEB_INSTALL_EXAMPLES_radiumd += debian/examples/*
+DEB_INSTALL_MANPAGES_radiumd += debian/manpages/*
 
 %:
 	dh --with bash-completion $@
 
 override_dh_auto_build:
-	cd src; $(MAKE) -f makefile.unix blackcoind
+	cd src; $(MAKE) -f makefile.unix radiumd
 	$(MAKE)
 
 override_dh_auto_clean:
-	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f blackcoin-qt; fi
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f radium-qt; fi
 	cd src; $(MAKE) -f makefile.unix clean
 
 override_dh_auto_configure:
-	qmake blackcoin-qt.pro USE_QRCODE=1
+	qmake radium-qt.pro USE_QRCODE=1
 
 override_dh_auto_test:
-	cd src; $(MAKE) -f makefile.unix test_blackcoin
-	src/test_blackcoin
+	cd src; $(MAKE) -f makefile.unix test_radium
+	src/test_radium
 
 # Ensure wrapper is set executable
-binary-post-install/blackcoind:
-	chmod +x $(cdbs_curdestdir)usr/bin/blackcoind
-binary-post-install/blackcoin-qt:
-	chmod +x $(cdbs_curdestdir)usr/bin/blackcoin-qt
+binary-post-install/radiumd:
+	chmod +x $(cdbs_curdestdir)usr/bin/radiumd
+binary-post-install/radium-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/radium-qt
