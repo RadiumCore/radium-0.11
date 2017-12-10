@@ -70,6 +70,8 @@ map<uint256, COrphanBlock*> mapOrphanBlocks;
 multimap<uint256, COrphanBlock*> mapOrphanBlocksByPrev;
 set<pair<COutPoint, unsigned int> > setStakeSeenOrphan;
 size_t nOrphanBlocksSize = 0;
+map<const uint256* ,int64_t> mapFeeCache;
+
 
 map<uint256, CTransaction> mapOrphanTransactions;
 map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
@@ -1200,6 +1202,10 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
     int64_t nInterval = nTargetTimespan / nTargetSpacing;
+
+    if(pindexBest->nHeight >= 48)
+            nInterval = nTargetTimespanNEW / nTargetSpacing;
+
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
 
@@ -2206,7 +2212,14 @@ bool CBlock::AcceptBlock()
         return DoS(100, error("AcceptBlock() : reject proof-of-work at height %d", nHeight));
 
     // Check coinbase timestamp
-    if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
+
+    // ORIGINAL code commented below. Due to error in up to 1.4.6, coinbase timestamp check didnt run for 
+    // initial round of PoW blocks. Due to this, new code below to skip check during PoW period. 
+    // if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
+    //    return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+
+  
+    if (nHeight > 20160 &&GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
         return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
 
     // Check coinstake timestamp
@@ -3103,6 +3116,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             {
                 pfrom->PushMessage("getaddr");
                 pfrom->fGetAddr = true;
+                LogPrintf("Requesting addresses from seed peer\n");
             }
             addrman.Good(pfrom->addr);
         } else {
@@ -3202,7 +3216,12 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             }
             // Do not store addresses outside our network
             if (fReachable)
+            {
                 vAddrOk.push_back(addr);
+                LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
+            }
+            else
+		 LogPrintf("Peer %s from seed peer is not reachable. %s \n", addr.ToString(), addr.GetNetwork() );
         }
         addrman.Add(vAddrOk, pfrom->addr, 2 * 60 * 60);
         if (vAddr.size() < 1000)
