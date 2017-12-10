@@ -3116,6 +3116,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             {
                 pfrom->PushMessage("getaddr");
                 pfrom->fGetAddr = true;
+                LogPrintf("Requesting addresses from seed peer\n");
             }
             addrman.Good(pfrom->addr);
         } else {
@@ -3215,7 +3216,12 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             }
             // Do not store addresses outside our network
             if (fReachable)
+            {
                 vAddrOk.push_back(addr);
+                LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
+            }
+            else
+		 LogPrintf("Peer %s from seed peer is not reachable. %s \n", addr.ToString(), addr.GetNetwork() );
         }
         addrman.Add(vAddrOk, pfrom->addr, 2 * 60 * 60);
         if (vAddr.size() < 1000)
