@@ -3218,8 +3218,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             if (fReachable)
             {
                 vAddrOk.push_back(addr);
-                LogPrintf("Found peer %s from seed peer. \n", addr.ToString());
+                LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
             }
+            else
+		 LogPrintf("Peer %s from seed peer is not reachable. %s \n", addr.ToString(), addr.GetNetwork() );
         }
         addrman.Add(vAddrOk, pfrom->addr, 2 * 60 * 60);
         if (vAddr.size() < 1000)
