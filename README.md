@@ -1,7 +1,7 @@
 
-radium development tree
+Radium development tree
 
-radium is a PoS-based cryptocurrency.
+Radium is a PoS-based cryptocurrency.
 
 Development process
 ===========================
