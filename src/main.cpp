@@ -3117,6 +3117,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                 pfrom->PushMessage("getaddr");
                 pfrom->fGetAddr = true;
                 LogPrintf("Requesting addresses from seed peer\n");
+		SetReachable(pfrom->addr.GetNetwork());
             }
             addrman.Good(pfrom->addr);
         } else {
