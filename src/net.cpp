@@ -299,6 +299,7 @@ bool IsReachable(const CNetAddr& addr)
 {
     LOCK(cs_mapLocalHost);
     enum Network net = addr.GetNetwork();
+    LogPrintf("Isreachable net: %s vfreachable %s , blocked network %s \n", net, vfReachable[net], vfLimited[net]);
     return vfReachable[net] && !vfLimited[net];
 }
 
