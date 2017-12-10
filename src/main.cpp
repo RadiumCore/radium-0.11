@@ -3163,6 +3163,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
     {
         vector<CAddress> vAddr;
         vRecv >> vAddr;
+        LogPrintf("Start process addresses\n");
 
         // Don't want addr from older versions unless seeding
         if (pfrom->nVersion < CADDR_TIME_VERSION && addrman.size() > 1000)
@@ -3185,6 +3186,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                 addr.nTime = nNow - 5 * 24 * 60 * 60;
             pfrom->AddAddressKnown(addr);
             bool fReachable = IsReachable(addr);
+  		LogPrintf("Potential address %s on network: %s reachable= %s \n", addr.ToString(), addr.GetNetwork(),fReachable);
             if (addr.nTime > nSince && !pfrom->fGetAddr && vAddr.size() <= 10 && addr.IsRoutable())
             {
                 // Relay to a limited number of other nodes
