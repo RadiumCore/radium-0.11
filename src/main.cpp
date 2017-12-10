@@ -2203,6 +2203,15 @@ bool CBlock::AcceptBlock()
     CBlockIndex* pindexPrev = (*mi).second;
     int nHeight = pindexPrev->nHeight+1;
 
+    // DoS protection for the spread fees fork
+    //  the +700 was added, because for some reasion version 7 blocks were included in the testnet up
+    //  untill block 123681, causing the dos code to prevent syncing.
+    if (TestNet() && nHeight+1 >= AVG_FEE_START_BLOCK_TESTNET + 700 && nVersion < 8)
+        return DoS(100, error("AcceptBlock() : reject too old nVersion (Avg fee) = %d", nVersion));
+
+    if (!TestNet() && nHeight+1 >= AVG_FEE_START_BLOCK && nVersion < 8)
+        return DoS(100, error("AcceptBlock() : reject too old nVersion (Avg fee) = %d", nVersion));
+
     if (IsProtocolV2(nHeight) && nVersion < 7)
         return DoS(100, error("AcceptBlock() : reject too old nVersion = %d", nVersion));
     else if (!IsProtocolV2(nHeight) && nVersion > 6)
