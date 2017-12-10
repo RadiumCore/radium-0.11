@@ -990,6 +990,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 {
 
     int64_t nSubsidy = 5 * COIN;
+
     if(pindexPrev->nHeight+1 >= 0 && pindexPrev->nHeight+1 <= 2779)
     {
         nSubsidy = 0 * COIN;
@@ -1036,15 +1037,19 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     }
     else if(pindexPrev->nHeight+1 >= 874360 && pindexPrev->nHeight+1 <= 1133559)
     {
-    nSubsidy = 0.75 * COIN; // First reward drop 6 months from the average fee fork.
+        nSubsidy = 0.75 * COIN; // First reward drop 6 months from the average fee fork.
     }
     else if(pindexPrev->nHeight+1 >= 1133560 && pindexPrev->nHeight+1 <= 1392759)
     {
-    nSubsidy = 0.5 * COIN; // Second reward drop 12 months from the average fee fork.
+        nSubsidy = 0.5 * COIN; // Second reward drop 12 months from the average fee fork.
     }
-    else if(pindexPrev->nHeight+1 >= 1392760)
+    else if(pindexPrev->nHeight+1 >= 1392760 && pindexPrev->nHeight+1 <= 18162094)
     {
-    nSubsidy = 0.25 * COIN; // Third and final reward drop 18 months from the average fee fork.
+        nSubsidy = 0.25 * COIN; // Third and final reward drop 18 months from the average fee fork.
+    }
+    else
+    {
+        nSubsidy = 0 * COIN; // Hard cap supply at 9,000,000 RADS
     }
 
 
@@ -1060,12 +1065,12 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     {
         avgHeight = AVG_FEE_START_BLOCK_TESTNET;
         avgHeightRevert  = AVG_FEE_START_BLOCK_TESTNET_REVERT;
-          avgHeightV2 = AVG_FEE_START_BLOCK_TESTNET_V2;
+        avgHeightV2 = AVG_FEE_START_BLOCK_TESTNET_V2;
     }
     else
     {
         avgHeight = AVG_FEE_START_BLOCK;
-          avgHeightRevert = AVG_FEE_START_BLOCK_REVERT;
+        avgHeightRevert = AVG_FEE_START_BLOCK_REVERT;
         avgHeightV2 =  AVG_FEE_START_BLOCK_V2;
     }
 
