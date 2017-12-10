@@ -262,9 +262,9 @@ Value getblockbynumber(const Array& params, bool fHelp)
         throw runtime_error("Block number out of range.");
 
     CBlock block;
-    CBlockIndex* pblockindex = mapBlockIndex[hashBestChain];
-    while (pblockindex->nHeight > nHeight)
-        pblockindex = pblockindex->pprev;
+    CBlockIndex* pblockindex = FindBlockByHeight(nHeight);
+   
+
 
     uint256 hash = *pblockindex->phashBlock;
 
