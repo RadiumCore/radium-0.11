@@ -248,7 +248,6 @@ enum opcodetype
 
 
     // template matching params
-    OP_SMALLDATA = 0xf9,
     OP_SMALLINTEGER = 0xfa,
     OP_PUBKEYS = 0xfb,
     OP_PUBKEYHASH = 0xfd,
@@ -591,22 +590,13 @@ public:
     unsigned int GetSigOpCount(const CScript& scriptSig) const;
 
     bool IsPayToScriptHash() const;
+    bool IsPushOnly() const;
+    bool IsPushOnly(const_iterator pc) const;
 
-    // Called by IsStandardTx and P2SH VerifyScript (which makes it consensus-critical).
-    bool IsPushOnly() const
-    {
-        const_iterator pc = begin();
-        while (pc < end())
-        {
-            opcodetype opcode;
-            if (!GetOp(pc, opcode))
-                return false;
-            if (opcode > OP_16)
-                return false;
-        }
-        return true;
-    }
 
+
+
+  
     // Called by IsStandardTx.
     bool HasCanonicalPushes() const;
 
