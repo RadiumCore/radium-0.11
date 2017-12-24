@@ -1124,8 +1124,6 @@ void CWallet::AvailableCoinsForStaking(vector<COutput>& vCoins) const
     vCoins.clear();
 
     {
-        CBlockIndex* pindexPrev = pindexBest;
-
         LOCK2(cs_main, cs_wallet);
         for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it)
         {
@@ -1560,8 +1558,6 @@ uint64_t CWallet::GetStakeWeight() const
         return 0;
 
     uint64_t nWeight = 0;
-
-    CBlockIndex* pindexPrev = pindexBest;
 
     LOCK2(cs_main, cs_wallet);
     BOOST_FOREACH(PAIRTYPE(const CWalletTx*, unsigned int) pcoin, setCoins)
