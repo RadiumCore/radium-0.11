@@ -437,12 +437,12 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, const CTransaction& tx, unsigned
     {
         int nDepth;
 
-        if (pindexPrev->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) 
+        if (pindexPrev->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT)
         {
             if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmationsV2 - 1, nDepth))
                 return tx.DoS(100, error("CheckProofOfStake() : tried to stake at depth %d", nDepth + 1));
         }
-        else 
+        else
         {
             if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmations - 1, nDepth))
                 return tx.DoS(100, error("CheckProofOfStake() : tried to stake at depth %d", nDepth + 1));

@@ -1040,13 +1040,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     {
         nSubsidy = 0.75 * COIN; // First reward drop 6 months from the average fee fork.
     }
-    else if(pindexPrev->nHeight+1 >= 1133560 && pindexPrev->nHeight+1 <= 1392759)
+    else if(pindexPrev->nHeight+1 >= 1133560 && pindexPrev->nHeight+1 <= 2443959)
     {
         nSubsidy = 0.5 * COIN; // Second reward drop 12 months from the average fee fork.
     }
-    else if(pindexPrev->nHeight+1 >= 1392760 && pindexPrev->nHeight+1 <= 18162094)
+    else if(pindexPrev->nHeight+1 >= 2443960 && pindexPrev->nHeight+1 <= 19886200)
     {
-        nSubsidy = 0.25 * COIN; // Third and final reward drop 18 months from the average fee fork.
+        nSubsidy = 0.25 * COIN; // Final reward drop 24 months from the founders reward fork.
     }
     else
     {
@@ -2009,7 +2009,7 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, const CBlockIndex* pindexPrev, uint64
         if (IsProtocolV3(nTime))
         {
             int nSpendDepth;
-            if (pindexPrev->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) 
+            if (pindexPrev->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT)
             {
                 if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmationsV2 - 1, nSpendDepth))
                 {
