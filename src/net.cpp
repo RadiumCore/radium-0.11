@@ -1168,8 +1168,10 @@ void static ProcessOneShot()
     CSemaphoreGrant grant(*semOutbound, true);
     if (grant) {
         if (!OpenNetworkConnection(addr, &grant, strDest.c_str(), true))
+        {
             AddOneShot(strDest);
             LogPrintf("Unable to connect to seed peer %s \n", strDest);
+        }
     }
 }
 

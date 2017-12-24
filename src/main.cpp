@@ -3231,16 +3231,22 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             // Do not store addresses outside our network
             if (fReachable)
             {
+                //apparently we need to set the network reachable, as its not done elsewhere, not sure why. 
+                SetReachable(pfrom->addr.GetNetwork());
+                //LogPrintf("Setting network %s reachable \n", pfrom->addr.GetNetwork());
                 vAddrOk.push_back(addr);
-                LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
-            }
+
+                if (pfrom->fOneShot)
+                    LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
+            }   
             else
-		 LogPrintf("Peer %s from seed peer is not reachable. %s \n", addr.ToString(), addr.GetNetwork() );
+                if (pfrom->fOneShot)
+                    LogPrintf("Peer %s from seed peer is not reachable. %s \n", addr.ToString(), addr.GetNetwork() );
         }
         addrman.Add(vAddrOk, pfrom->addr, 2 * 60 * 60);
         if (vAddr.size() < 1000)
             pfrom->fGetAddr = false;
-        if (pfrom->fOneShot)
+        if (pfrom->fOneShot)       
             pfrom->fDisconnect = true;
     }
 
