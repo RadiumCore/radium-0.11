@@ -43,6 +43,7 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 20);
 
 int nStakeMinConfirmations = 60;
+int nStakeMinConfirmationsV2 = 120;
 unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
@@ -2008,10 +2009,21 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, const CBlockIndex* pindexPrev, uint64
         if (IsProtocolV3(nTime))
         {
             int nSpendDepth;
-            if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmations - 1, nSpendDepth))
+            if (pindexPrev->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) 
             {
-                LogPrint("coinage", "coin age skip nSpendDepth=%d\n", nSpendDepth + 1);
-                continue; // only count coins meeting min confirmations requirement
+                if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmationsV2 - 1, nSpendDepth))
+                {
+                    LogPrint("coinage", "coin age skip nSpendDepth=%d\n", nSpendDepth + 1);
+                    continue; // only count coins meeting min confirmations requirement
+                }
+            }
+            else
+            {
+                if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmations - 1, nSpendDepth))
+                {
+                    LogPrint("coinage", "coin age skip nSpendDepth=%d\n", nSpendDepth + 1);
+                    continue; // only count coins meeting min confirmations requirement
+                }
             }
         }
         else

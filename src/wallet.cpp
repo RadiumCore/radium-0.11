@@ -1124,6 +1124,8 @@ void CWallet::AvailableCoinsForStaking(vector<COutput>& vCoins) const
     vCoins.clear();
 
     {
+        CBlockIndex* pindexPrev = pindexBest;
+
         LOCK2(cs_main, cs_wallet);
         for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it)
         {
@@ -1133,8 +1135,16 @@ void CWallet::AvailableCoinsForStaking(vector<COutput>& vCoins) const
             if (nDepth < 1)
                 continue;
 
-            if (nDepth < nStakeMinConfirmations)
-                continue;
+            if (pindexBest->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) 
+            {
+                if (nDepth < nStakeMinConfirmationsV2)
+                    continue;
+            }
+            else 
+            {
+                if (nDepth < nStakeMinConfirmations)
+                    continue;
+            }
 
             if (pcoin->GetBlocksToMaturity() > 0)
                 continue;
@@ -1551,11 +1561,22 @@ uint64_t CWallet::GetStakeWeight() const
 
     uint64_t nWeight = 0;
 
+    CBlockIndex* pindexPrev = pindexBest;
+
     LOCK2(cs_main, cs_wallet);
     BOOST_FOREACH(PAIRTYPE(const CWalletTx*, unsigned int) pcoin, setCoins)
     {
-        if (pcoin.first->GetDepthInMainChain() >= nStakeMinConfirmations)
-            nWeight += pcoin.first->vout[pcoin.second].nValue;
+        if (pindexBest->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) 
+        {
+            if (pcoin.first->GetDepthInMainChain() >= nStakeMinConfirmationsV2)
+                nWeight += pcoin.first->vout[pcoin.second].nValue;
+        }
+        else 
+        {
+            if (pcoin.first->GetDepthInMainChain() >= nStakeMinConfirmations)
+                nWeight += pcoin.first->vout[pcoin.second].nValue;
+        }
+        
     }
 
     return nWeight;
