@@ -1147,6 +1147,14 @@ void DumpAddresses()
 
 void static ProcessOneShot()
 {
+
+    // no need to continue serching for peers if we allready have some
+    LOCK(cs_vNodes);
+    int node_count = (int)vNodes.size();
+    if (node_count >5)
+        return;
+    
+
     string strDest;
     {
         LOCK(cs_vOneShots);
