@@ -43,7 +43,7 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 20);
 
 int nStakeMinConfirmations = 60;
-unsigned int nStakeMinAge = 6 * 60 * 60; // 8 hours
+unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 60;
@@ -2395,6 +2395,14 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 
         if (!EnsureLowS(pblock->vchBlockSig))
             return error("ProcessBlock(): EnsureLowS failed");
+    }
+
+    // Check if block is from old (<1.5.0) peer
+    if (pfrom->nVersion < FOUNDERS_REWARD_PROTOCOL_VERSION){
+        if (mapBlockIndex[pblock->hashPrevBlock]->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT) {
+            pfrom->Misbehaving(100);
+            return error("ProcessBlock(): block from peer with pre founders reward protocol version");
+        }
     }
 
     // Preliminary checks
