@@ -3053,6 +3053,22 @@ void static ProcessGetData(CNode* pfrom)
     }
 }
 
+
+// Is this a node we want to talk to?
+bool static GoodNodeVersion(int nVersion)
+{
+   // if version >= founders version, we can connect 
+   if (nVersion >= FOUNDERS_REWARD_BLOCK_HEIGHT)
+        return true;
+
+   // assuming less than founders, AND we have not yet forked, we can connect
+   if (nVersion >= MIN_PEER_PROTO_VERSION && pindexBest->nHeight <= FOUNDERS_REWARD_BLOCK_HEIGHT)
+        return true;
+
+   // all other conditions, this is not a good peer version
+   return false;   
+}
+
 bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, int64_t nTimeReceived)
 {
     RandAddSeedPerfmon();
@@ -3077,7 +3093,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         CAddress addrFrom;
         uint64_t nNonce = 1;
         vRecv >> pfrom->nVersion >> pfrom->nServices >> nTime >> addrMe;
-        if (pfrom->nVersion < MIN_PEER_PROTO_VERSION)
+        if (!GoodNodeVersion(pfrom->nVersion))
         {
             // disconnect from peers older than this proto version
             LogPrintf("partner %s using obsolete version %i; disconnecting\n", pfrom->addr.ToString(), pfrom->nVersion);
