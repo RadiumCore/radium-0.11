@@ -60,6 +60,19 @@ inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHei
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 0; }
 inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1461851161; }
 
+static const unsigned int TestNet_Stake_Min_Confirmations = 10;
+static const unsigned int V3_Stake_Min_Confirmations = 60;
+static const unsigned int Founders_Stake_Min_Confirmations = 120;
+inline int nStakeMinConfirmations(int nHeight) 
+{ 
+    if (TestNet()) 
+        return TestNet_Stake_Min_Confirmations; 
+    else if (nHeight > FOUNDERS_REWARD_BLOCK_HEIGHT) 
+        return Founders_Stake_Min_Confirmations; 
+    else 
+        return V3_Stake_Min_Confirmations;
+}
+
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 2 * 60; }
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
@@ -72,8 +85,6 @@ extern CTxMemPool mempool;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 extern CBlockIndex* pindexGenesisBlock;
-extern int nStakeMinConfirmations;
-extern int nStakeMinConfirmationsV2;
 extern unsigned int nStakeMinAge;
 extern unsigned int nNodeLifespan;
 extern int nCoinbaseMaturity;

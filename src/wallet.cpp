@@ -1133,17 +1133,9 @@ void CWallet::AvailableCoinsForStaking(vector<COutput>& vCoins) const
             if (nDepth < 1)
                 continue;
 
-            if (pindexBest->nHeight + 1 > FOUNDERS_REWARD_BLOCK_HEIGHT)
-            {
-                if (nDepth < nStakeMinConfirmationsV2)
-                    continue;
-            }
-            else
-            {
-                if (nDepth < nStakeMinConfirmations)
-                    continue;
-            }
-
+            if (nDepth < nStakeMinConfirmations(pindexBest->nHeight))
+                continue;
+            
             if (pcoin->GetBlocksToMaturity() > 0)
                 continue;
 
