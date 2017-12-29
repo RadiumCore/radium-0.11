@@ -3151,6 +3151,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         pfrom->fSuccessfullyConnected = true;
 
         LogPrintf("receive version message: version %d, blocks=%d, us=%s, them=%s, peer=%s\n", pfrom->nVersion, pfrom->nStartingHeight, addrMe.ToString(), addrFrom.ToString(), pfrom->addr.ToString());
+        //apparently we need to set the network reachable, as its not done elsewhere, not sure why. 
+        SetReachable(pfrom->addr.GetNetwork());
+        LogPrintf("Setting network %s reachable \n", pfrom->addr.GetNetwork());
 
         int64_t nTimeOffset = nTime - GetTime();
         pfrom->nTimeOffset = nTimeOffset;
@@ -3231,11 +3234,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             // Do not store addresses outside our network
             if (fReachable)
             {
-                //apparently we need to set the network reachable, as its not done elsewhere, not sure why. 
-                SetReachable(pfrom->addr.GetNetwork());
-                //LogPrintf("Setting network %s reachable \n", pfrom->addr.GetNetwork());
+                
                 vAddrOk.push_back(addr);
-
                 if (pfrom->fOneShot)
                     LogPrintf("Found peer %s from seed peer. %s \n", addr.ToString(), addr.GetNetwork());
             }   
