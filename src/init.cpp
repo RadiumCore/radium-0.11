@@ -639,7 +639,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     if (TestNet())
     { 
-        BOOST_FOREACH(string strDest, seednodes)
+        BOOST_FOREACH(string strDest, testnet_seednodes)
         {
             AddOneShot(strDest);
             LogPrintf("Will query testnet hard-code seed peer %s \n", strDest);
