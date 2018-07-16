@@ -42,7 +42,7 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 6 * 60 * 60; // 8 hours
+unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 60;
@@ -989,6 +989,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nFees)
 {
 
     int64_t nSubsidy = 5 * COIN;
+    int64_t nYear = 525600; // ~ blocks per year
 
     if(pindexPrev->nHeight+1 >= 0 && pindexPrev->nHeight+1 <= 2779)
     {
