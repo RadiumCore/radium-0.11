@@ -1133,7 +1133,7 @@ void CWallet::AvailableCoinsForStaking(vector<COutput>& vCoins) const
             if (nDepth < 1)
                 continue;
 
-            if (nDepth < nStakeMinConfirmations)
+            if (nDepth < nStakeMinConfirmations(pindexBest->nHeight))
                 continue;
 
             if (pcoin->GetBlocksToMaturity() > 0)
@@ -1554,10 +1554,10 @@ uint64_t CWallet::GetStakeWeight() const
     LOCK2(cs_main, cs_wallet);
     BOOST_FOREACH(PAIRTYPE(const CWalletTx*, unsigned int) pcoin, setCoins)
     {
-        if (pcoin.first->GetDepthInMainChain() >= nStakeMinConfirmations)
+        // not sure if this should be nHeight or nHeight =1, but is only used as a display number, not in working code.  
+        if (pcoin.first->GetDepthInMainChain() >= nStakeMinConfirmations(pindexBest->nHeight + 1))
             nWeight += pcoin.first->vout[pcoin.second].nValue;
-    }
-
+    }     
     return nWeight;
 }
 

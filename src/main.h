@@ -87,6 +87,18 @@ inline bool IsBlockDevFund(int nHeight)
         return false;      
 }
 
+static const unsigned int nStakeMinConfirmationsTest = 10;
+static const unsigned int nStakeMinConfirmationsV3 = 60;
+static const unsigned int nStakeMinConfirmationsV4 = 120;
+inline int nStakeMinConfirmations(int nHeight) 
+{ 
+    if (TestNet()) 
+        return nStakeMinConfirmationsTest; 
+    else if (IsProtocolV4(nHeight)) 
+        return nStakeMinConfirmationsV4; 
+    else 
+        return nStakeMinConfirmationsV3;
+}
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 2 * 60; }
@@ -100,7 +112,6 @@ extern CTxMemPool mempool;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 extern CBlockIndex* pindexGenesisBlock;
-extern int nStakeMinConfirmations;
 extern unsigned int nStakeMinAge;
 extern unsigned int nNodeLifespan;
 extern int nCoinbaseMaturity;
