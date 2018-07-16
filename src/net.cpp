@@ -1164,16 +1164,14 @@ void static ProcessOneShot()
             return;
         strDest = vOneShots.front();
         vOneShots.pop_front();
-        LogPrintf("Attempting to connect to seed peer %s \n", strDest);
+        LogPrint("net", "Attempting to connect to seed peer %s \n", strDest);
     }
     CAddress addr;
     CSemaphoreGrant grant(*semOutbound, true);
     if (grant) {
         if (!OpenNetworkConnection(addr, &grant, strDest.c_str(), true))
-        {
             AddOneShot(strDest);
-            LogPrintf("Unable to connect to seed peer %s \n", strDest);
-        }
+            LogPrint("net", "Unable to connect to seed peer %s \n", strDest);
     }
 }
 
