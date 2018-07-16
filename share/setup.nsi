@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile radium-1.4.7-win32-setup.exe
+OutFile radium-1.5.1-win32-setup.exe
 InstallDir $PROGRAMFILES\radium
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.4.7.0
+VIProductVersion 1.5.1.0
 VIAddVersionKey ProductName Radium
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
