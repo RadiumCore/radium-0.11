@@ -92,6 +92,8 @@ def mkblockset(blkindex):
 		blkmap[hash] = True
 	return blkmap
 
+
+
 def copydata(settings, blkindex, blkset):
 	inFn = 1
 	inF = None
@@ -100,6 +102,7 @@ def copydata(settings, blkindex, blkset):
 	outF = None
 	outFname = None
 	blkCount = 0
+	dupcount = 0
         blk_done_map ={}
 
 	lastDate = datetime.datetime(2000, 1, 1)
@@ -123,6 +126,9 @@ def copydata(settings, blkindex, blkset):
 				inF = open(fname, "rb")
 			except IOError:
 				print "Done"
+                               	print("total blocks " + str(blkCount))
+	                        print("dup blocks " + str(dupcount))
+
 				return
 
 		inhdr = inF.read(8)
@@ -143,66 +149,20 @@ def copydata(settings, blkindex, blkset):
 		blk_hdr = rawblock[:80]
 
 		hash_str = 0
-                
-              
-		if blkCount > 0:
+
+                if blkCount > 0:
 			hash_str = calc_hash_str(blk_hdr)
 		else:
 			hash_str = calc_scrypt_hash_str(blk_hdr)
-
-		if not hash_str in blkset:
-			print("Skipping unknown block " + hash_str + " count: "+ str(blkCount))
-			continue
-
+		
                 if hash_str in blk_done_map:
-		        print("Skipping duplicate block " + hash_str + " count: "+ str(blkCount))
-                        continue
+		       dupcount += 1
+                       
 
-		if blkindex[blkCount] != hash_str:
-			print("Out of order block.")
-			print("Expected " + blkindex[blkCount])
-			print("Got " + hash_str)
-                        print("Number " + str(blkCount))
-			sys.exit(1)
-
-		if not fileOutput and ((outsz + inLen) > maxOutSz):
-			outF.close()
-			if setFileTime:
-				os.utime(outFname, (int(time.time()), highTS))
-			outF = None
-			outFname = None
-			outFn = outFn + 1
-			outsz = 0
-
-		(blkDate, blkTS) = get_blk_dt(blk_hdr)
-		if timestampSplit and (blkDate > lastDate):
-			print("New month " + blkDate.strftime("%Y-%m") + " @ " + hash_str)
-			lastDate = blkDate
-			if outF:
-				outF.close()
-				if setFileTime:
-					os.utime(outFname, (int(time.time()), highTS))
-				outF = None
-				outFname = None
-				outFn = outFn + 1
-				outsz = 0
-
-		if not outF:
-			if fileOutput:
-				outFname = settings['output_file']
-			else:
-				outFname = "%s/blk%05d.dat" % (settings['output'], outFn)
-			print("Output file" + outFname)
-			outF = open(outFname, "wb")
-
-		outF.write(inhdr)
-		outF.write(rawblock)
-		outsz = outsz + inLen + 8
 
 		blkCount = blkCount + 1
                 blk_done_map[hash_str] = True
-		if blkTS > highTS:
-			highTS = blkTS
+		
 
 		if (blkCount % 1000) == 0:
 			print("Wrote " + str(blkCount) + " blocks")
