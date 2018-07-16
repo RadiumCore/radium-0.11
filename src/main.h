@@ -24,6 +24,7 @@ class CNode;
 class CReserveKey;
 class CWallet;
 
+static const char *DEV_FUND_SCRIPT = "a914622b2274e97ebce0b25a5316ceca0af02120395087"; // This is a 5-of-12 multisig address for radium development fund address: QVZ419DruuEQYxbCgvF6vNwYTJizbhC9qw
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
 static const unsigned int MAX_BLOCK_SIZE = 2000000;
 /** The maximum size for mined blocks */
@@ -54,9 +55,38 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 
 static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 
+// Varius fork-dependant vars
+static const int DEV_FUND_BLOCK_HEIGHT = 1655000; // Developers Fund block height
+static const int DEV_FUND_BLOCK_HEIGHT_TESTNET = 734300; // Developers Fund block height
+
 inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 0; }
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 0; }
 inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1461851161; }
+inline bool IsProtocolV4(int nHeight) 
+{
+    if (TestNet())        
+        return nHeight >= DEV_FUND_BLOCK_HEIGHT_TESTNET;
+
+    return nHeight >= DEV_FUND_BLOCK_HEIGHT;
+
+}
+inline bool IsBlockDevFund(int nHeight)
+{ 
+    // first check if we are past dev fund start heigt
+    if (IsProtocolV4(nHeight))
+        {
+            // check if it is time to pay out (~ weekly, )
+                        
+            if ( nHeight % 10080 == 0 )
+            {
+                LogPrint("devfork", "*** Block # %d Is Dev Fund. Mod remainder %d \n", nHeight, (nHeight % 10080));
+                return true;
+            }
+            LogPrint("devfork", "Block # %d Is NOT Dev Fund. Mod remainder %d \n", nHeight, (nHeight % 10080));
+        }       
+        return false;      
+}
+
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 2 * 60; }
@@ -135,6 +165,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
 int64_t GetProofOfWorkReward(int64_t nFees);
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nFees);
+int64_t GetDevSubsidy(const CBlockIndex* pindexPrev);
 bool IsInitialBlockDownload();
 bool IsConfirmedInNPrevBlocks(const CTxIndex& txindex, const CBlockIndex* pindexFrom, int nMaxDepth, int& nActualDepth);
 std::string GetWarnings(std::string strFor);
@@ -291,6 +322,20 @@ public:
     {
         // ppcoin: the coin stake transaction is marked with the first output empty
         return (vin.size() > 0 && (!vin[0].prevout.IsNull()) && vout.size() >= 2 && vout[0].IsEmpty());
+    }
+
+    int64_t GetDevSubsidy() const
+    {
+        BOOST_FOREACH(const CTxOut& txout, vout) 
+        {
+            if (txout.scriptPubKey == ParseHex(DEV_FUND_SCRIPT)) 
+            {
+                LogPrint("devfork", "*** CTransaction GetDevSubsidy FOUND Subsidy: %d \n", txout.nValue);  
+                return txout.nValue;           
+            }
+        }
+      LogPrint("devfork", "CTransaction GetDevSubsidy NOT FOUND \n");
+      return 0;
     }
 
     /** Amount of bitcoins spent by this transaction.

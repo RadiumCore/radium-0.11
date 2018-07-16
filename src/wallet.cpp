@@ -1717,6 +1717,15 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     else
         txNew.vout[1].nValue = nCredit;
 
+    // Add Development reward
+    if (IsBlockDevFund(pindexPrev->nHeight + 1))
+    {
+        vector<unsigned char> rewardScript = ParseHex(DEV_FUND_SCRIPT);
+        int64_t vDevSubsidy = GetDevSubsidy(pindexPrev);
+        LogPrint("devfork", "*** This block %d is dev fund. Adding dev subsidy of %d \n", (pindexPrev->nHeight + 1), vDevSubsidy);
+        txNew.vout.push_back(CTxOut(vDevSubsidy, CScript(rewardScript.begin(), rewardScript.end())));
+    }
+
     // Sign
     int nIn = 0;
     BOOST_FOREACH(const CWalletTx* pcoin, vwtxPrev)

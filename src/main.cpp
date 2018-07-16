@@ -1055,6 +1055,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nFees)
 
     if (fDebug && GetBoolArg("-printcreation", false))
     LogPrint("creation", "GetProofOfStakeReward(): create=%s \n", FormatMoney(nSubsidy));
+    LogPrint("devfork", "GetProofOfStakeReward returned %d \n", nSubsidy);
 
     int avgHeight;
     int avgHeightRevert;
@@ -1097,6 +1098,133 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nFees)
         return nSubsidy + nFees;
     }
 
+}
+
+// Get block raw subsidy for dev subsidy 
+int64_t GetDevSubsidy(const CBlockIndex* pindexPrev)
+{
+    int64_t nSubsidy = 5 * COIN;
+    int64_t nYear = 525600; // ~ blocks per year
+
+    if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear)
+    {
+        nSubsidy = 600 * COIN; // Back to 0.5!.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *2)
+    {
+        nSubsidy = 582 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *2 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *3)
+    {
+        nSubsidy = 565 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *3 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *4)
+    {
+        nSubsidy = 548 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *4 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *5)
+    {
+        nSubsidy = 532 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *5 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *6)
+    {
+        nSubsidy = 516 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *6 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *7)
+    {
+        nSubsidy = 501 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *7 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *8)
+    {
+        nSubsidy = 486 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *8 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *9)
+    {
+        nSubsidy = 471 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *9 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *10)
+    {
+        nSubsidy = 457 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *10 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *11)
+    {
+        nSubsidy = 443 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *11 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *12)
+    {
+        nSubsidy = 430 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *12 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *13)
+    {
+        nSubsidy = 417 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *13 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *14)
+    {
+        nSubsidy = 404 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *14 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *15)
+    {
+        nSubsidy = 392 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *15 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *16)
+    {
+        nSubsidy = 380 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *16 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *17)
+    {
+        nSubsidy = 369 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *17 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *18)
+    {
+        nSubsidy = 358 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *18 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *19)
+    {
+        nSubsidy = 347 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *19 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *20)
+    {
+        nSubsidy = 337 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *20 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *21)
+    {
+        nSubsidy = 327 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *21 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *22)
+    {
+        nSubsidy = 317 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *22 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *23)
+    {
+        nSubsidy = 307 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *23 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *24)
+    {
+        nSubsidy = 298 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *24 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *25)
+    {
+        nSubsidy = 289 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *25 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *26)
+    {
+        nSubsidy = 280 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *26 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *27)
+    {
+        nSubsidy = 272 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else if(pindexPrev->nHeight+1 >= DEV_FUND_BLOCK_HEIGHT + nYear *27 && pindexPrev->nHeight+1 < DEV_FUND_BLOCK_HEIGHT + nYear *28)
+    {
+        nSubsidy = 264 * COIN; // Final reward drop 24 months from the dev subsidy fork.
+    }
+    else
+    {
+        nSubsidy = 0 * COIN; // Hard cap supply at 9,000,000 RADS
+    }
+
+    LogPrint("devfork", "GetDevSubsidy returned %d \n", nSubsidy);
+    return nSubsidy;
 }
 
 //calculate fee average over AVG_FEE_SPAN blocks
@@ -1696,6 +1824,9 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString());
 
         int64_t nCalculatedStakeReward = GetProofOfStakeReward(pindex->pprev, nFees);
+	
+        if (IsBlockDevFund(pindex->nHeight))
+            nCalculatedStakeReward += GetDevSubsidy(pindex->pprev);
 
         if (nStakeReward > nCalculatedStakeReward)
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%d vs calculated=%d)", nStakeReward, nCalculatedStakeReward));
@@ -2281,6 +2412,15 @@ bool CBlock::AcceptBlock()
     if (vtx[0].vin[0].scriptSig.size() < expect.size() ||
         !std::equal(expect.begin(), expect.end(), vtx[0].vin[0].scriptSig.begin()))
         return DoS(100, error("AcceptBlock() : block height mismatch in coinbase"));
+ 
+    // Second transaction must include dev subsidy
+    if (IsBlockDevFund(nHeight))
+    {
+        if (vtx[1].GetDevSubsidy() != (GetDevSubsidy(pindexPrev)))
+                return DoS(100, error("CheckBlock() : Dev Subsidy missing"));
+        else
+                LogPrint("devfork", "*** Accept Block dev subsidy found %d \n", vtx[1].GetDevSubsidy() );
+   }
 
     // Write block to history file
     if (!CheckDiskSpace(::GetSerializeSize(*this, SER_DISK, CLIENT_VERSION)))
