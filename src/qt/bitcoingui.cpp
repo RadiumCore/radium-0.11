@@ -82,6 +82,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 {
     resize(850+95, 550);
     setWindowTitle(tr("Radium Core") + " - " + tr("Wallet"));
+    setFixedSize(850+95, 550);
+
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -127,9 +129,14 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     centralStackedWidget->addWidget(addressBookPage);
     centralStackedWidget->addWidget(receiveCoinsPage);
     centralStackedWidget->addWidget(sendCoinsPage);
+    centralStackedWidget->setStyleSheet( "QStackedWidget {background: rgb(30,32,36,90); }");
 
     QWidget *centralWidget = new QWidget();
+    centralWidget->setObjectName("CWidget");
+    centralWidget->setStyleSheet("QWidget#CWidget {background: rgb(30,32,36,25); background-repeat: no-repeat; background-image: url(:/images/background); background-position: top center;}");
+
     QVBoxLayout *centralLayout = new QVBoxLayout(centralWidget);
+
 #ifndef Q_OS_MAC
     centralLayout->addWidget(appMenuBar);
 #endif
@@ -175,24 +182,28 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     // Progress bar and label for blocks download
     progressBarLabel = new QLabel();
     progressBarLabel->setVisible(false);
+    progressBarLabel->setObjectName("greybackground");
     progressBar = new QProgressBar();
     progressBar->setAlignment(Qt::AlignCenter);
     progressBar->setVisible(false);
+    progressBarLabel->setObjectName("greybackground");
 
     if (!fUseBlackTheme)
     {
         // Override style sheet for progress bar for styles that have a segmented progress bar,
         // as they make the text unreadable (workaround for issue #1071)
         // See https://qt-project.org/doc/qt-4.8/gallery.html
-        QString curStyle = qApp->style()->metaObject()->className();
-        if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
-        {
-            progressBar->setStyleSheet("QProgressBar { background-color: #e8e8e8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
-        }
+        //QString curStyle = qApp->style()->metaObject()->className();
+        //if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
+       // {
+            progressBarLabel->setStyleSheet("QLabel { background-color:  rgb(30,32,36); border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
+            progressBar->setStyleSheet("QProgressBar { background-color:  rgb(30,32,36); border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
+       // }
     }
-
+    statusBar()->setStyleSheet("background-color:  rgb(30,32,36); color: rgb(128,128,128); ");
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
+
 
     syncIconMovie = new QMovie(fUseBlackTheme ? ":/movies/update_spinner_black" : ":/movies/update_spinner", "mng", this);
 
@@ -362,15 +373,16 @@ void BitcoinGUI::createToolBars()
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    if (fUseBlackTheme)
-    {
-        QWidget* header = new QWidget();
-        header->setMinimumSize(160, 116);
-        header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        header->setStyleSheet("QWidget { background-color: rgb(24,26,30); background-repeat: no-repeat; background-image: url(:/images/header); background-position: top center; }");
-        toolbar->addWidget(header);
-        toolbar->addWidget(makeToolBarSpacer());
-    }
+
+
+    QWidget* header = new QWidget();
+    header->setMinimumSize(160, 170);
+    header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    header->setStyleSheet("QWidget { background: transparent; background-repeat: no-repeat; background-image: url(:/images/header); background-position: bottom center; }");
+
+    toolbar->addWidget(header);
+    toolbar->addWidget(makeToolBarSpacer());
+
 
     toolbar->addAction(overviewAction);
     toolbar->addAction(receiveCoinsAction);

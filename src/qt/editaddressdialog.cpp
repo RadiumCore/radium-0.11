@@ -12,6 +12,7 @@ EditAddressDialog::EditAddressDialog(Mode mode, QWidget *parent) :
     ui(new Ui::EditAddressDialog), mapper(0), mode(mode), model(0)
 {
     ui->setupUi(this);
+    setObjectName("BackgroundGrey");
 
     GUIUtil::setupAddressWidget(ui->addressEdit, this);
 

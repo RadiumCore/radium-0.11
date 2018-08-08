@@ -5,10 +5,12 @@
 #include "version.h"
 
 AboutDialog::AboutDialog(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent),   
     ui(new Ui::AboutDialog)
 {
     ui->setupUi(this);
+    setObjectName("BackgroundGrey");
+
 }
 
 void AboutDialog::setModel(ClientModel *model)

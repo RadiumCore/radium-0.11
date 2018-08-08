@@ -194,6 +194,7 @@ RPCConsole::RPCConsole(QWidget *parent) :
     historyPtr(0)
 {
     ui->setupUi(this);
+    setObjectName("BackgroundGrey");
 
 #ifndef Q_OS_MAC
     ui->openDebugLogfileButton->setIcon(QIcon(":/icons/export"));

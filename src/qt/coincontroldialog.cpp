@@ -32,6 +32,8 @@ CoinControlDialog::CoinControlDialog(QWidget *parent) :
     model(0)
 {
     ui->setupUi(this);
+    setObjectName("BackgroundGrey");
+    setFixedWidth(900);
 
     // context menu actions
     QAction *copyAddressAction = new QAction(tr("Copy address"), this);
@@ -104,10 +106,10 @@ CoinControlDialog::CoinControlDialog(QWidget *parent) :
 
     ui->treeWidget->setColumnWidth(COLUMN_CHECKBOX, 84);
     ui->treeWidget->setColumnWidth(COLUMN_AMOUNT, 100);
-    ui->treeWidget->setColumnWidth(COLUMN_LABEL, 170);
+    ui->treeWidget->setColumnWidth(COLUMN_LABEL, 150);
     ui->treeWidget->setColumnWidth(COLUMN_ADDRESS, 290);
     ui->treeWidget->setColumnWidth(COLUMN_DATE, 110);
-    ui->treeWidget->setColumnWidth(COLUMN_CONFIRMATIONS, 100);
+    ui->treeWidget->setColumnWidth(COLUMN_CONFIRMATIONS, 120);
     ui->treeWidget->setColumnHidden(COLUMN_TXHASH, true);         // store transacton hash in this column, but dont show it
     ui->treeWidget->setColumnHidden(COLUMN_VOUT_INDEX, true);     // store vout index in this column, but dont show it
     ui->treeWidget->setColumnHidden(COLUMN_AMOUNT_INT64, true);   // store amount int64_t in this column, but dont show it

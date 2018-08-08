@@ -45,12 +45,14 @@ TransactionView::TransactionView(QWidget *parent) :
 #endif
 
     dateWidget = new QComboBox(this);
+    //typeWidget->setObjectName("fixedH20");
     dateWidget->setItemDelegate(new QStyledItemDelegate());
 #ifdef Q_OS_MAC
     dateWidget->setFixedWidth(121);
 #else
     dateWidget->setFixedWidth(120);
 #endif
+    dateWidget->setFixedHeight(23);
     dateWidget->addItem(tr("All"), All);
     dateWidget->addItem(tr("Today"), Today);
     dateWidget->addItem(tr("This week"), ThisWeek);
@@ -61,12 +63,14 @@ TransactionView::TransactionView(QWidget *parent) :
     hlayout->addWidget(dateWidget);
 
     typeWidget = new QComboBox(this);
+    //typeWidget->setObjectName("fixedH20");
     typeWidget->setItemDelegate(new QStyledItemDelegate());
 #ifdef Q_OS_MAC
     typeWidget->setFixedWidth(121);
 #else
     typeWidget->setFixedWidth(120);
 #endif
+    typeWidget->setFixedHeight(23);
 
     typeWidget->addItem(tr("All"), TransactionFilterProxy::ALL_TYPES);
     typeWidget->addItem(tr("Received with"), TransactionFilterProxy::TYPE(TransactionRecord::RecvWithAddress) |
@@ -80,6 +84,10 @@ TransactionView::TransactionView(QWidget *parent) :
     hlayout->addWidget(typeWidget);
 
     addressWidget = new QLineEdit(this);
+    //addressWidget->setObjectName("fixedH23");
+    addressWidget->setFixedHeight(23);
+    addressWidget->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    addressWidget->setContentsMargins(0,0,0,0);
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
     addressWidget->setPlaceholderText(tr("Enter address or label to search"));
@@ -87,6 +95,8 @@ TransactionView::TransactionView(QWidget *parent) :
     hlayout->addWidget(addressWidget);
 
     amountWidget = new QLineEdit(this);
+    amountWidget->setFixedHeight(23);
+    //amountWidget->setObjectName("fixedH23");
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
     amountWidget->setPlaceholderText(tr("Min amount"));
